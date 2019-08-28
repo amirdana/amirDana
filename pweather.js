@@ -8,7 +8,7 @@ window.addEventListener("load", () => {
       console.log(long);
       console.log(lat);
 
-      const api = `https://cors-anywhere.herokuapp.com/https://api.darksky.net/forecast/645471e083e551402049938d9fbf4b8e/${lat},${long}`;
+      const api = `https://api.darksky.net/forecast/645471e083e551402049938d9fbf4b8e/${lat},${long}`;
       fetch(api)
         .then(answer => {
           return answer.json();
