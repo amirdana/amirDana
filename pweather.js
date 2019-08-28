@@ -13,19 +13,19 @@ window.addEventListener("load", () => {
         .then(answer => {
           return answer.json();
         })
-        .then(data => {
+        .then(dataz => {
           document.getElementById("preloader").style.display = "none";
-          console.log(data);
-          zone = data.timezone;
+          console.log(dataz);
+          zone = dataz.timezone;
           document.querySelector(".t-z").innerHTML = zone;
           document.querySelector(".w-h").innerHTML =
-            Math.round(data.currently.humidity * 100) + " %";
+            Math.round(dataz.currently.humidity * 100) + " %";
           document.querySelector(".w-s").innerHTML =
-            data.currently.windSpeed + " km";
+            dataz.currently.windSpeed + " km";
           document.querySelector(".w-temp").innerHTML =
-            Math.round(((data.currently.temperature - 32) * 5) / 9) + " °C";
+            Math.round(((dataz.currently.temperature - 32) * 5) / 9) + " °C";
 
-          setIcons(data.currently.icon, document.querySelector(".icon"));
+          setIcons(dataz.currently.icon, document.querySelector(".icon"));
         });
     });
   } else {
